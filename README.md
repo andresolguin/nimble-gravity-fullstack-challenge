@@ -1,16 +1,28 @@
-# React + Vite
+# Nimble Gravity — Fullstack Challenge (React)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Small React app that:
+- Fetches open jobs from the provided API
+- Lets the user paste a GitHub repo URL per job
+- Submits an application to the selected job via POST
 
-Currently, two official plugins are available:
+## Tech
+- React + Vite
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## How to run
 
-## React Compiler
+npm install
+npm run dev
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Open: http://localhost:5173
 
-## Expanding the ESLint configuration
+## API
+Base URL:
+- https://botfilter-h5ddh6dye8exb7ha.centralus-01.azurewebsites.net
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Used endpoints:
+- GET `/api/candidate/get-by-email?email=...`
+- GET `/api/jobs/get-list`
+- POST `/api/candidate/apply-to-job`
+
+## Notes
+While the instructions mention `uuid`, `candidateId`, `jobId`, and `repoUrl`, the API validation requires `applicationId` as well. The app includes it in the POST body.
